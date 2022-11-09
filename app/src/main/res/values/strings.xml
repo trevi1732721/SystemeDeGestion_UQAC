@@ -1,0 +1,11 @@
+<resources>
+    <string name="titre">Projet de gestion</string>
+    <string name="app_name">Projet gestion</string>
+    <string name="employe">Ajouter employé</string>
+    <string name="tache">Ajouter tâche</string>
+    <string name="projet">Ajouter projet</string>
+    <string name="view_employes">Voir liste employés</string>
+    <string name="view_projects">Voir list projets</string>
+    <string name="view_tasks">Voir liste tâches</string>
+
+</resources>
