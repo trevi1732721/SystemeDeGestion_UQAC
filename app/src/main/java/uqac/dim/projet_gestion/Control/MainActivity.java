@@ -3,8 +3,12 @@ package uqac.dim.projet_gestion.Control;
 import androidx.appcompat.app.AppCompatActivity;
 import uqac.dim.projet_gestion.Model.*;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import uqac.dim.projet_gestion.R;
 
@@ -18,21 +22,64 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button employe = (Button) findViewById(R.id.addEmploye);
+        employe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addEmploye(view);
+            }
+        });
+        Button task = (Button) findViewById(R.id.addTask);
+        task.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTask(view);
+            }
+        });
+        Button project = (Button) findViewById(R.id.addProject);
+        project.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addProject(view);
+            }
+        });
+        Button listEmploye = (Button) findViewById(R.id.listEmploye);
+        listEmploye.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                list_employes(view);
+            }
+        });
+        Button listTask = (Button) findViewById(R.id.listTask);
+        listTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                list_tasks(view);
+            }
+        });
+        Button listProject = (Button) findViewById(R.id.listProject);
+        listProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                list_projects(view);
+            }
+        });
     }
 
-    protected void addemploye(View view)        // on peut tu les renommer addEmploye  ????? pls
+    protected void addEmploye(View view)
     {
         User user = new User("Username", "nom", "email", "Password");
         user1 = user;
     }
 
-    protected void addtask(View view)           // on peut tu les renommer addTask  ????? pls
+    protected void addTask(View view)
     {
         Task task = new Task("nomDeTache","Voici la nouvelle tâche", 25, "7 janvier");
         task1 = task;
     }
 
-    protected void addproject(View view)        // on peut tu les renommer addProject  ????? pls
+    protected void addProject(View view)
     {
         Project project = new Project("nomDeProjet", "NomAuteur");
         project1 = project;

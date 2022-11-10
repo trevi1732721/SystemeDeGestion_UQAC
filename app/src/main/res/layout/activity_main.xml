@@ -42,21 +42,21 @@
         android:text="@string/employe"
         android:textAlignment="center"
         android:backgroundTint="#3AB13F"
-        android:onClick="addemploye"/>
+        android:id="@+id/addEmploye"/>
     <Button
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="@string/tache"
         android:textAlignment="center"
         android:backgroundTint="#3AB13F"
-        android:onClick="addtask"/>
+        android:id="@+id/addTask"/>
     <Button
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="@string/projet"
         android:textAlignment="center"
         android:backgroundTint="#3AB13F"
-        android:onClick="addproject"/>
+        android:id="@+id/addProject"/>
     </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -69,21 +69,21 @@
             android:text="@string/view_employes"
             android:textAlignment="center"
             android:backgroundTint="#3AB13F"
-            android:onClick="list_employes"/>
+            android:id="@+id/listEmploye"/>
         <Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/view_tasks"
             android:textAlignment="center"
             android:backgroundTint="#3AB13F"
-            android:onClick="list_tasks"/>
+            android:id="@+id/listTask"/>
         <Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/view_projects"
             android:textAlignment="center"
             android:backgroundTint="#3AB13F"
-            android:onClick="list_projects"/>
+            android:id="@+id/listProject"/>
     </LinearLayout>
     </LinearLayout>
 
