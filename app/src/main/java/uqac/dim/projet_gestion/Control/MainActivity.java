@@ -6,9 +6,13 @@ import uqac.dim.projet_gestion.Model.*;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import uqac.dim.projet_gestion.R;
 
@@ -69,20 +73,77 @@ public class MainActivity extends AppCompatActivity {
 
     protected void addEmploye(View view)
     {
-        User user = new User("Username", "nom", "email", "Password");
-        user1 = user;
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_add_employe, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, false);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        Button cancel = (Button) popupView.findViewById(R.id.cancel_button);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //cancel button
+                popupWindow.dismiss();
+            }
+        });
     }
 
     protected void addTask(View view)
     {
-        Task task = new Task("nomDeTache","Voici la nouvelle tâche", 25, "7 janvier");
-        task1 = task;
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_add_task, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, false);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        Button cancel = (Button) popupView.findViewById(R.id.cancel_button);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //cancel button
+                popupWindow.dismiss();
+            }
+        });
     }
 
     protected void addProject(View view)
     {
-        Project project = new Project("nomDeProjet", "NomAuteur");
-        project1 = project;
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_add_project, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, false);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        Button cancel = (Button) popupView.findViewById(R.id.cancel_button);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //cancel button
+                popupWindow.dismiss();
+            }
+        });
     }
 
     protected void list_employes(View view)

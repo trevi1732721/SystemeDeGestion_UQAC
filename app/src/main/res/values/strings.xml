@@ -7,5 +7,10 @@
     <string name="view_employes">Voir liste employés</string>
     <string name="view_projects">Voir liste projets</string>
     <string name="view_tasks">Voir liste tâches</string>
-
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="save_employe">Sauvegarder employé</string>
+    <string name="save_task">Sauvegarder tâche</string>
+    <string name="save_project">Sauvegarder projet</string>
+    <string name="cancel">Annuler</string>
 </resources>

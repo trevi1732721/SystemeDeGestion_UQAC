@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C1BFBF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tache"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstName"
+        android:hint="@string/firstName"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastName"
+        android:hint="@string/lastName"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#939292"
+            android:id="@+id/cancel_button"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/save_task"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#4CAF50"
+            android:id="@+id/save_button"/>
+
+    </LinearLayout>
+</LinearLayout>
