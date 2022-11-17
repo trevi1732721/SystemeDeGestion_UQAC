@@ -13,4 +13,9 @@
     <string name="save_task">Sauvegarder tâche</string>
     <string name="save_project">Sauvegarder projet</string>
     <string name="cancel">Annuler</string>
+    <string name="utilisateur">Utilisateur</string>
+    <string name="motdepasse">Mot de passe</string>
+    <string name="login">Connexion</string>
+
+
 </resources>
