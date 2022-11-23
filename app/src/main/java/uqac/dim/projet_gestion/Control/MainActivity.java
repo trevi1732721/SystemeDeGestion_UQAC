@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         Button employe = (Button) findViewById(R.id.addEmploye);
         employe.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 
     protected void addEmploye(View view)
     {

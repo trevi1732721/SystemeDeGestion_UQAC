@@ -10,13 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projet_gestion">
         <activity
-            android:name=".Control.MainActivity"
+            android:name=".Control.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Control.MainActivity"
+            android:exported="true"
+            android:parentActivityName=".Control.Login">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.Login"/>
         </activity>
     </application>
 
