@@ -16,6 +16,7 @@
     <string name="utilisateur">Utilisateur</string>
     <string name="motdepasse">Mot de passe</string>
     <string name="login">Connexion</string>
+    <string name="connexion">Veuillez vous connecter</string>
 
 
 </resources>

@@ -157,9 +157,9 @@ public class MainActivity extends AppCompatActivity {
 
         //affiche les infos des employées
 
-        if (user1.getName() != null){ // vérifie si l'élement a bien été créé
+        /*if (user1.getName() != null){ // vérifie si l'élement a bien été créé
             user1.printUser();        // print le user en console
-        }
+        }*/
 
     }
 
@@ -172,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
 
         //affiche les infos des tâches
 
-        if (task1.getName() != null){       // vérifie si l'élement a bien été créé
+        /*if (task1.getName() != null){       // vérifie si l'élement a bien été créé
             task1.printTask();              // print le user en console
-        }
+        }*/
 
     }
 
@@ -186,9 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
         //affiche les infos des projets
 
-        if (project1.getName() != null){   // vérifie si l'élement a bien été créé
+        /*if (project1.getName() != null){   // vérifie si l'élement a bien été créé
             project1.afficherProjet();     // print le user en console
-        }
+        }*/
 
     }
 }
