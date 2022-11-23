@@ -1,94 +1,56 @@
 package uqac.dim.projet_gestion;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Project {
 
     private String id;
-
     private String name;
-    //private String projectKey;
-    private String nomAuteur;
-    //private String currencySign;
+    private String projectKey;
+    private String authorName;
+    private List<String> members;
+    private List<String> admins;
+    private List<Task> projectTasks;
+    private List<Task> completedTasks;
 
-    private List<String> membres;
-    private List<String> administrateurs;
-    private List<Task> tachesProjet;
-    private List<Task> tachesComplete;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Project(String name, String authorName) {
         this.name = name;
+        this.authorName = authorName;
+        this.admins = new ArrayList<>();
+        this.members = new ArrayList<>();
+        this.projectTasks = new ArrayList<>();
+        this.completedTasks = new ArrayList<>();
     }
 
-    public String getNomAuteur() {
-        return nomAuteur;
-    }
+    // Recuperer la tache correspondante a la cle
+    /*public Task getTaskByKey(String key) {
+        return projectTasks.stream()
+                .filter(task -> task.getKey().equals(key))
+                .findFirst()
+                .orElse(null);
+    }*/
 
-    public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
-    }
+    // Retirer la tache correspondante a la cle
+    /*public void removeTaskByKey(String key) {
+        projectTasks.removeIf(task -> task.getKey().equals(key));
+    }*/
 
-    public List<String> getMembres() {
-        return membres;
-    }
 
-    public void setMembres(List<String> membres) {
-        this.membres = membres;
-    }
+    // Recuperer un projet a partir de sa cle correspondante
+    /*public ProjectItem getItemByKey(String key) {
+        // we try to find an item in the first list - 'doneProjectItems'
+        Optional<ProjectItem> doneItem = doneProjectItems.stream()
+                .filter(item -> item.getKey().equals(key))
+                .findFirst();
 
-    public List<String> getAdministrateurs() {
-        return administrateurs;
-    }
+        // If there is no such item, then it is in the second
+        Optional<ProjectItem> activeItem = activeProjectItems.stream()
+                .filter(item -> item.getKey().equals(key))
+                .findFirst();
 
-    public void setAdministrateurs(List<String> administrateurs) {
-        this.administrateurs = administrateurs;
-    }
-
-    public List<Task> getTachesProjet() {
-        return tachesProjet;
-    }
-
-    public void setTachesProjet(List<Task> tachesProjet) {
-        this.tachesProjet = tachesProjet;
-    }
-
-    public List<Task> getTachesComplete() {
-        return tachesComplete;
-    }
-
-    public void setTachesComplete(List<Task> tachesComplete) {
-        this.tachesComplete = tachesComplete;
-    }
-
-    public Project(String nom, String nomAuteur)
-    {
-        this.name = name;
-        this.nomAuteur = nomAuteur;
-
-        this.administrateurs = new ArrayList<>();
-        this.membres = new ArrayList<>();
-        this.tachesProjet = new ArrayList<>();
-        this.tachesComplete = new ArrayList<>();
-    }
-
-    public Task getTask ()
-    {
-        return tachesProjet.stream().findFirst().orElse(null);
-    }
-
-    public void afficherProjet(){
-        System.out.println(name + " " + nomAuteur + " " + membres +  " " + administrateurs +  " " + tachesProjet +  " " + tachesComplete );
-    }
+        return doneItem.orElseGet(activeItem::get);
+    }*/
 }
