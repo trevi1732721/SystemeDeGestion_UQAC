@@ -17,6 +17,12 @@
     <string name="motdepasse">Mot de passe</string>
     <string name="login">Connexion</string>
     <string name="connexion">Veuillez vous connecter</string>
-
+    <string name="email">Adresse courriel</string>
+    <string name="qualification">Qualification</string>
+    <string name="title">Titre</string>
+    <string name="name">Nom</string>
+    <string name="description">Description</string>
+    <string name="fileNumber">Numéro de fichier</string>
+    <string name="tempsEstimer">Temps estimé</string>
 
 </resources>
