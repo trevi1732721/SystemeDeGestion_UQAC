@@ -102,6 +102,19 @@ public class MainActivity extends AppCompatActivity {
                 popupWindow.dismiss();
             }
         });
+
+        Button save = (Button) popupView.findViewById(R.id.save_button);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
+                String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
+                String utilisateur = ((EditText) findViewById(R.id.utilisateur)).getText().toString();
+                String email = ((EditText) findViewById(R.id.email)).getText().toString();
+                String qualification = ((EditText) findViewById(R.id.qualification)).getText().toString();
+                String mdp = ((EditText) findViewById(R.id.mdp)).getText().toString();
+            }
+        });
     }
 
     protected void addTask(View view)
@@ -125,6 +138,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //cancel button
                 popupWindow.dismiss();
+            }
+        });
+        Button save = (Button) popupView.findViewById(R.id.save_button);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = ((EditText) findViewById(R.id.name)).getText().toString();
+                String description = ((EditText) findViewById(R.id.description)).getText().toString();
+                String tempsEstimer = ((EditText) findViewById(R.id.tempsEstimer)).getText().toString();
             }
         });
     }
@@ -152,10 +174,21 @@ public class MainActivity extends AppCompatActivity {
                 popupWindow.dismiss();
             }
         });
+        Button save = (Button) popupView.findViewById(R.id.save_button);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String title = ((EditText) findViewById(R.id.title)).getText().toString();
+                String description = ((EditText) findViewById(R.id.description)).getText().toString();
+                String fileNumber = ((EditText) findViewById(R.id.fileNumber)).getText().toString();
+            }
+        });
     }
 
     protected void list_employes(View view)
     {
+        Intent list_employes = new Intent(MainActivity.this,listEmployes.class);
+        startActivity(list_employes);
         //vas dans la bd
 
         //extrait les employers

@@ -26,6 +26,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Control.Login"/>
         </activity>
+        <activity
+            android:name=".Control.listEmployes"
+            android:exported="true"
+            android:parentActivityName=".Control.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".Control.listTasks"
+            android:exported="true"
+            android:parentActivityName=".Control.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".Control.listProjects"
+            android:exported="true"
+            android:parentActivityName=".Control.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
