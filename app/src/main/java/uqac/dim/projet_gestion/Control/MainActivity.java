@@ -203,7 +203,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void list_tasks(View view)
     {
-
+        Intent list_tasks = new Intent(MainActivity.this,listTasks.class);
+        startActivity(list_tasks);
         //vas dans la bd
 
         //extrait les tâches
@@ -218,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void list_projects(View view)
     {
+        Intent list_projects = new Intent(MainActivity.this,listProjects.class);
+        startActivity(list_projects);
         //vas dans la bd
 
         //extrait les Projets
