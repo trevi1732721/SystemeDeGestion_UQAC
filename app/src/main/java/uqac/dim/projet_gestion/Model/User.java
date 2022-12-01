@@ -1,8 +1,10 @@
 package uqac.dim.projet_gestion.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.*;
 
-public class User {
+public class User implements Parcelable {
 
     private String id;
     private String userName;
@@ -17,6 +19,24 @@ public class User {
     private Set<String> projectsTakePartIn;
 
     private long registerDate;
+
+    /**
+     * CREATOR to implement Parcelable
+     */
+    public static final Parcelable.Creator<User> CREATOR
+            = new Parcelable.Creator<User>() {
+
+        @Override
+        public User createFromParcel(Parcel parcel) {
+            return new User(parcel);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
 
     public User(String userName, String name, String email, String password) {
         this.userName = userName;
