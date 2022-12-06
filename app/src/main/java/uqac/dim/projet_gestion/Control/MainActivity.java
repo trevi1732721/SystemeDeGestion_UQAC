@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
                 addEmploye(view);
             }
         });
-        Button task = (Button) findViewById(R.id.addTask);
+        /*Button task = (Button) findViewById(R.id.addTask);
         task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addTask(view);
             }
-        });
+        });*/
         Button project = (Button) findViewById(R.id.addProject);
         project.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 list_employes(view);
             }
         });
-        Button listTask = (Button) findViewById(R.id.listTask);
+        /*Button listTask = (Button) findViewById(R.id.listTask);
         listTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 list_tasks(view);
             }
-        });
+        });*/
         Button listProject = (Button) findViewById(R.id.listProject);
         listProject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void addTask(View view)
+    /*protected void addTask(View view)
     {
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 String tempsEstimer = ((EditText) findViewById(R.id.tempsEstimer)).getText().toString();
             }
         });
-    }
+    }*/
 
     protected void addProject(View view)
     {
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    protected void list_tasks(View view)
+    /*protected void list_tasks(View view)
     {
         Intent list_tasks = new Intent(MainActivity.this,listTasks.class);
         startActivity(list_tasks);
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
             task1.printTask();              // print le user en console
         }*/
 
-    }
+    //}
 
     protected void list_projects(View view)
     {
