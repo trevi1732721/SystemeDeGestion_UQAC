@@ -49,6 +49,16 @@ public class listProjects extends AppCompatActivity {
                 R.layout.support_simple_spinner_dropdown_item,
                 LISTEMPLOYE);
         l.setAdapter(arr);
+
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parentView, View childView,
+                                       int position, long id)
+            {
+                Intent detail_project = new Intent(listProjects.this,detailProject.class);
+                startActivity(detail_project);
+            }
+        });
     }
 
 

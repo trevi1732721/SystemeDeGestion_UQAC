@@ -1,6 +1,7 @@
 package uqac.dim.projet_gestion.Control;
 
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.app.ListFragment;
@@ -53,5 +54,14 @@ public class listEmployes extends AppCompatActivity {
                 LISTEMPLOYE);
         l.setAdapter(arr);
 
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parentView, View childView,
+                                    int position, long id)
+            {
+                Intent detail_employe = new Intent(listEmployes.this,detailEmploye.class);
+                startActivity(detail_employe);
+            }
+        });
     }
 }
