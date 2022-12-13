@@ -107,12 +107,13 @@ public class MainActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
+                /*String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
                 String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
                 String utilisateur = ((EditText) findViewById(R.id.utilisateur)).getText().toString();
                 String email = ((EditText) findViewById(R.id.email)).getText().toString();
                 String qualification = ((EditText) findViewById(R.id.qualification)).getText().toString();
-                String mdp = ((EditText) findViewById(R.id.mdp)).getText().toString();
+                String mdp = ((EditText) findViewById(R.id.mdp)).getText().toString();*/
+                popupWindow.dismiss();
             }
         });
     }
@@ -178,9 +179,10 @@ public class MainActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String title = ((EditText) findViewById(R.id.title)).getText().toString();
-                String description = ((EditText) findViewById(R.id.description)).getText().toString();
-                String fileNumber = ((EditText) findViewById(R.id.fileNumber)).getText().toString();
+                //String title = ((EditText) findViewById(R.id.title)).getText().toString();
+                //String description = ((EditText) findViewById(R.id.description)).getText().toString();
+                //String fileNumber = ((EditText) findViewById(R.id.fileNumber)).getText().toString();
+                popupWindow.dismiss();
             }
         });
     }
