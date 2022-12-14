@@ -127,6 +127,12 @@ public class User implements Parcelable {
     }
 
 
+    public String ToString(){
+        return new String ("Id: " + id + " First Name: " + firstName   + " Last Name: " + lastName + " email: " + email +
+                " Max Hours: " + maxHours + " Workstation: " + workstation + " Qualification: " + qualification + " Access:" + access);
+    }
+
+
 
     /*public boolean isRoleAdmin() {
         return role.equals("Admin");

@@ -35,4 +35,11 @@ public class UsersTable {
     }
 
 
+
+    public static final String FILL_USER_EXEMPLE_SQL = " INSERT INTO `USERS` (`user_id`,`user_first_name`,`user_last_name`,`user_email`,`user_password`,`user_max_hours`,`user_workstation`,`user_qualification`,`user_access`)" +
+            "VALUES (1,'Mike','Tyson','miketyson@onepunchman.com','KnockOut',7,'Boxer','KnockOut Master',1)"+
+            "VALUES (2,'Mik2e','Tys3on','miketys2on@onepunchman.com','Knoc2kOut',72,'B2oxer','Kn2ockOut Mast2er',2)"+
+            "VALUES (3,'Mi3ke','Ty3son','miket3yson@onepunchman.com','KnockO3ut',73,'B3oxer','Knoc3kOut M3aster',3)";
+
+
 }

@@ -17,10 +17,13 @@ import uqac.dim.projet_gestion.Model.task.FetchUserListTask;
 import uqac.dim.projet_gestion.R;
 import uqac.dim.projet_gestion.database.repository.GestionRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements FetchUserListTask.FetchUserListListener{
+
+    ArrayList<String> usersListInString = new ArrayList<String>();
 
     private GestionRepository gestionRepository;
     private ProgressBar navigationViewProgressBar;
@@ -231,11 +234,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onUserListFetched(List users) {
         hideFullscreenProgressBar();
+
+        for ( Object user: users
+             ) {
+            User userCast = (User)user;
+            usersListInString.add(userCast.ToString());
+        }
         //réception de la liste d'user qui ont les critères demandées.
     }
     protected void list_employes(View view)
     {
         Intent list_employes = new Intent(MainActivity.this,listEmployes.class);
+        list_employes.putExtra("UserList", usersListInString);
         startActivity(list_employes);
         //vas dans la bd
 
