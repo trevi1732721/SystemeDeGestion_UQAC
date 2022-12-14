@@ -6,12 +6,22 @@ import java.util.*;
 
 public class User implements Parcelable {
 
-    private String id;
-    private String userName;
-    private String name;
+    private int id;
+
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
-    private String role;
+    private float maxHours;
+
+    private String workstation;
+
+    private String qualification;
+
+    private int access;
+
+    /*private String role;
+    private String userName;
     private String note;
     private List<Task> tasks;
     private List<Task> completedTasks;
@@ -19,7 +29,30 @@ public class User implements Parcelable {
     private Set<String> projectsTakePartIn;
 
     private long registerDate;
+    */
 
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeInt(id);
+        parcel.writeString(firstName);
+        parcel.writeString(lastName);
+        parcel.writeString(email);
+        parcel.writeString(password);
+        parcel.writeFloat(maxHours);
+        parcel.writeString(workstation);
+        parcel.writeString(qualification);
+        parcel.writeInt(access);
+
+
+
+       /* if (typeSecondary != null)
+            parcel.writeString(typeSecondary.name());
+        else
+            parcel.writeString(null);
+
+         parcel.writeInt(isFavorite ? 1 : 0);
+        */
+    }
     /**
      * CREATOR to implement Parcelable
      */
@@ -37,8 +70,27 @@ public class User implements Parcelable {
         }
     };
 
+    private User(Parcel parcel){
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.maxHours = maxHours;
+        this.workstation = workstation;
+        this.qualification = qualification;
+        this.access = access;
 
-    public User(String userName, String name, String email, String password) {
+        /*this.tasks = new ArrayList<>();
+        this.completedTasks = new ArrayList<>();
+        this.createdProjects = new HashSet<>();
+        this.projectsTakePartIn = new HashSet<>();
+        this.registerDate = new Date().getTime();
+        this.role = "User";
+        this.note = "";*/
+    }
+
+   /* public User(String userName, String name, String email, String password) {
         this.userName = userName;
         this.name = name;
         this.email = email;
@@ -50,12 +102,31 @@ public class User implements Parcelable {
         this.registerDate = new Date().getTime();
         this.role = "User";
         this.note = "";
+    }*/
+
+    public User(int id,String firstName, String lastName, String email, String password, float maxHours,  String workstation, String qualification, int access) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.maxHours = maxHours;
+        this.workstation = workstation;
+        this.qualification = qualification;
+        this.access = access;
     }
 
-    public void removeProject(String projectName) {
+   /* public void removeProject(String projectName) {
         projectsTakePartIn.remove(projectName);
         createdProjects.remove(projectName);
+    }*/
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
+
+
 
     /*public boolean isRoleAdmin() {
         return role.equals("Admin");

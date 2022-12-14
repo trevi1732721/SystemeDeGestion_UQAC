@@ -1,9 +1,8 @@
 package uqac.dim.projet_gestion.database.repository;
 
+import uqac.dim.projet_gestion.Model.User;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-
 import uqac.dim.projet_gestion.database.UsersTable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class GestionRepository implements Repository {
 
     /**
      * Constructor of the gestion repository.
-     * @param gestionDatabase The writable database of the gestion application.
+     * @param sqLiteDatabase The writable database of the gestion application.
      */
     public GestionRepository(SQLiteDatabase sqLiteDatabase) {
         this.gestionDatabase = sqLiteDatabase;
@@ -30,7 +29,7 @@ public class GestionRepository implements Repository {
      * @throws RepositoryException
      */
     public List findAllbyLastName() throws RepositoryException {
-        return makeUserList(UsersTable.SELECT_ALL_BY_LAST_NAME_SQL, null);
+        return makeUserList(UsersTable.SELECT_ALL_BY_LAST_NAME_SQL);
     }
 
     /**
@@ -38,8 +37,8 @@ public class GestionRepository implements Repository {
      * @return A list of user ordered by employee number.
      * @throws RepositoryException
      */
-    public List findAllbyEmployeeNumber() throws RepositoryException {
-        return makeUserList(UsersTable.SELECT_ALL_BY_EMPLOYEE_NUMBER_SQL, null);
+    public List findAllbyUserId() throws RepositoryException {
+        return makeUserList(UsersTable.SELECT_ALL_BY_ID);
     }
 
     /**
@@ -49,7 +48,7 @@ public class GestionRepository implements Repository {
      */
     @Override
     public List findAll() throws RepositoryException {
-        return makeUserList(UsersTable.SELECT_ALL_SQL, null);
+        return makeUserList(UsersTable.SELECT_ALL_SQL);
     }
 
     /**
@@ -57,14 +56,14 @@ public class GestionRepository implements Repository {
      * @param query  the query requested.
      * @return return a list of the requested users.
      */
-    private List<user> makeUserList(String query) {
+    private List<User> makeUserList(String query) {
         List<User> usersList = new ArrayList<>();
         gestionDatabase.beginTransaction();
         try {
             cursor = gestionDatabase.rawQuery(query, new String[]{});
 
             while (cursor.moveToNext()) {
-                user.add(buildUser(cursor));
+                usersList.add(buildUser(cursor));
             }
             gestionDatabase.endTransaction();
             return usersList;
@@ -75,19 +74,19 @@ public class GestionRepository implements Repository {
         }
     }
 
-    private user buildUser(Cursor cursor) {
+    private User buildUser(Cursor cursor) {
         int userId = cursor.getInt(DatabaseOrder.ID.ordinal());
         return new User(
                 cursor.getInt(DatabaseOrder.ID.ordinal()),
-                cursor.getInt(DatabaseOrder.EMPLOYEE_NUMBER.ordinal()),
                 cursor.getString(DatabaseOrder.FIRST_NAME.ordinal()),
                 cursor.getString(DatabaseOrder.LAST_NAME.ordinal()),
                 cursor.getString(DatabaseOrder.EMAIL.ordinal()),
                 cursor.getString(DatabaseOrder.PASSWORD.ordinal()),
-                cursor.getReal(DatabaseOrder.MAX_HOURS.ordinaL()),
-                cursor.getString(DatabaseOrder.WOKRSTATION.ordinal()),
+                cursor.getInt(DatabaseOrder.MAX_HOURS.ordinal()),
+                cursor.getString(DatabaseOrder.WORKSTATION.ordinal()),
                 cursor.getString(DatabaseOrder.QUALIFICATION.ordinal()),
-                cursor.getInt(DatabaseOrder.ACCESS.ordinal()),
+                cursor.getInt(DatabaseOrder.ACCESS.ordinal())
+                //tasksRepository.getAllTask(userId)
         );
     }
 
@@ -96,6 +95,6 @@ public class GestionRepository implements Repository {
      * Enum containing the order of the columns in a single row of the table user.
      */
     public enum DatabaseOrder {
-        ID, EMPLOYEE_NUMBER, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, MAX_HOURS, WOKRSTATION, QUALIFICATION, ACCESS
+        ID, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, MAX_HOURS, WORKSTATION, QUALIFICATION, ACCESS
     }
 }

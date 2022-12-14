@@ -1,5 +1,7 @@
 package uqac.dim.projet_gestion.Control;
 
+import android.view.MenuItem;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import uqac.dim.projet_gestion.Model.*;
 
@@ -10,16 +12,18 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 
+import uqac.dim.projet_gestion.Model.task.FetchUserListTask;
 import uqac.dim.projet_gestion.R;
+import uqac.dim.projet_gestion.database.repository.GestionRepository;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity
+        implements FetchUserListTask.FetchUserListListener{
+
+    private GestionRepository gestionRepository;
+    private ProgressBar navigationViewProgressBar;
     Project project1;
     User user1;
     Task task1;
@@ -185,6 +189,48 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    public void makeFetchUserListDbRequest(String fetchCriteria) {
+        FetchUserListTask fetchListTask = new FetchUserListTask(this, gestionRepository);
+        fetchListTask.execute(fetchCriteria);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.listEmploye:
+                makeFetchUserListDbRequest(FetchUserListTask.USER_BY_ID);
+                break;
+            default:
+                break;
+        }
+        item.setChecked(true);
+        return super.onOptionsItemSelected(item);
+    }
+
+    public GestionRepository getGestionRepository() {
+        return gestionRepository;
+    }
+
+    private void showFullscreenProgressBar() {
+        navigationViewProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideFullscreenProgressBar() {
+        navigationViewProgressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onUserListFetching() {
+        showFullscreenProgressBar();
+    }
+
+    @Override
+    public void onUserListFetched(List users) {
+        hideFullscreenProgressBar();
+        //réception de la liste d'user qui ont les critères demandées.
+    }
     protected void list_employes(View view)
     {
         Intent list_employes = new Intent(MainActivity.this,listEmployes.class);
