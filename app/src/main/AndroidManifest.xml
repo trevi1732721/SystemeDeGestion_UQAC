@@ -50,6 +50,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Control.MainActivity"/>
         </activity>
+        <activity
+            android:name=".Control.detailProject"
+            android:exported="true"
+            android:parentActivityName=".Control.listProjects">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.listProjects"/>
+        </activity>
+        <activity
+            android:name=".Control.detailEmploye"
+            android:exported="true"
+            android:parentActivityName=".Control.listEmployes">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Control.listEmployes"/>
+        </activity>
     </application>
 
 </manifest>

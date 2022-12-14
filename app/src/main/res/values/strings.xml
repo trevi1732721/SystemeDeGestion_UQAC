@@ -24,5 +24,6 @@
     <string name="description">Description</string>
     <string name="fileNumber">Numéro de fichier</string>
     <string name="tempsEstimer">Temps estimé</string>
+    <string name="infoIncorrecte">Les informations entrées sont incorrectes...Réessayez!</string>
 
 </resources>

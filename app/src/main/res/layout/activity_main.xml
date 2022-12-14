@@ -46,13 +46,6 @@
     <Button
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="@string/tache"
-        android:textAlignment="center"
-        android:backgroundTint="#3AB13F"
-        android:id="@+id/addTask"/>
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
         android:text="@string/projet"
         android:textAlignment="center"
         android:backgroundTint="#3AB13F"
@@ -70,13 +63,6 @@
             android:textAlignment="center"
             android:backgroundTint="#3AB13F"
             android:id="@+id/listEmploye"/>
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/view_tasks"
-            android:textAlignment="center"
-            android:backgroundTint="#3AB13F"
-            android:id="@+id/listTask"/>
         <Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"

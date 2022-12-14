@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity
                 addEmploye(view);
             }
         });
-        Button task = (Button) findViewById(R.id.addTask);
+        /*Button task = (Button) findViewById(R.id.addTask);
         task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addTask(view);
             }
-        });
+        });*/
         Button project = (Button) findViewById(R.id.addProject);
         project.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +62,13 @@ public class MainActivity extends AppCompatActivity
                 list_employes(view);
             }
         });
-        Button listTask = (Button) findViewById(R.id.listTask);
+        /*Button listTask = (Button) findViewById(R.id.listTask);
         listTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 list_tasks(view);
             }
-        });
+        });*/
         Button listProject = (Button) findViewById(R.id.listProject);
         listProject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,17 +111,18 @@ public class MainActivity extends AppCompatActivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
+                /*String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
                 String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
                 String utilisateur = ((EditText) findViewById(R.id.utilisateur)).getText().toString();
                 String email = ((EditText) findViewById(R.id.email)).getText().toString();
                 String qualification = ((EditText) findViewById(R.id.qualification)).getText().toString();
-                String mdp = ((EditText) findViewById(R.id.mdp)).getText().toString();
+                String mdp = ((EditText) findViewById(R.id.mdp)).getText().toString();*/
+                popupWindow.dismiss();
             }
         });
     }
 
-    protected void addTask(View view)
+    /*protected void addTask(View view)
     {
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity
                 String tempsEstimer = ((EditText) findViewById(R.id.tempsEstimer)).getText().toString();
             }
         });
-    }
+    }*/
 
     protected void addProject(View view)
     {
@@ -182,9 +183,10 @@ public class MainActivity extends AppCompatActivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String title = ((EditText) findViewById(R.id.title)).getText().toString();
-                String description = ((EditText) findViewById(R.id.description)).getText().toString();
-                String fileNumber = ((EditText) findViewById(R.id.fileNumber)).getText().toString();
+                //String title = ((EditText) findViewById(R.id.title)).getText().toString();
+                //String description = ((EditText) findViewById(R.id.description)).getText().toString();
+                //String fileNumber = ((EditText) findViewById(R.id.fileNumber)).getText().toString();
+                popupWindow.dismiss();
             }
         });
     }
@@ -247,9 +249,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    protected void list_tasks(View view)
+    /*protected void list_tasks(View view)
     {
-
+        Intent list_tasks = new Intent(MainActivity.this,listTasks.class);
+        startActivity(list_tasks);
         //vas dans la bd
 
         //extrait les tâches
@@ -260,10 +263,12 @@ public class MainActivity extends AppCompatActivity
             task1.printTask();              // print le user en console
         }*/
 
-    }
+    //}
 
     protected void list_projects(View view)
     {
+        Intent list_projects = new Intent(MainActivity.this,listProjects.class);
+        startActivity(list_projects);
         //vas dans la bd
 
         //extrait les Projets
