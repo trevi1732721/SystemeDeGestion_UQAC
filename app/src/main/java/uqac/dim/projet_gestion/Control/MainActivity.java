@@ -5,7 +5,6 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import uqac.dim.projet_gestion.Model.*;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.KeyListener;
 import android.util.Log;
@@ -159,7 +158,7 @@ public class MainActivity extends AppCompatActivity
         });
     }*/
 
-    protected void addProject(View view)
+    protected void addProject(View view)        // on peut tu les renommer addProject  ????? pls
     {
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
