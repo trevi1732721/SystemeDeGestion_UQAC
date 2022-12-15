@@ -2,7 +2,6 @@ package uqac.dim.projet_gestion.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.util.*;
 
 public class User implements Parcelable {
 
@@ -71,15 +70,14 @@ public class User implements Parcelable {
     };
 
     private User(Parcel parcel){
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.maxHours = maxHours;
-        this.workstation = workstation;
-        this.qualification = qualification;
-        this.access = access;
+        this.id = parcel.readInt();
+        this.firstName = parcel.readString();
+        this.lastName = parcel.readString();
+        this.email = parcel.readString();
+        this.maxHours = parcel.readInt();
+        this.workstation = parcel.readString();
+        this.qualification = parcel.readString();
+        this.access = parcel.readInt();
 
         /*this.tasks = new ArrayList<>();
         this.completedTasks = new ArrayList<>();
@@ -104,7 +102,7 @@ public class User implements Parcelable {
         this.note = "";
     }*/
 
-    public User(int id,String firstName, String lastName, String email, String password, float maxHours,  String workstation, String qualification, int access) {
+    public User(int id, String firstName, String lastName, String email, float maxHours, String workstation, String qualification, int access) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

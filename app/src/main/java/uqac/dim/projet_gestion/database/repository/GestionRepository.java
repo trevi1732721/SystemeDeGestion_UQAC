@@ -75,13 +75,12 @@ public class GestionRepository implements Repository {
     }
 
     private User buildUser(Cursor cursor) {
-        int userId = cursor.getInt(DatabaseOrder.ID.ordinal());
+       // int userId = cursor.getInt(DatabaseOrder.ID.ordinal());
         return new User(
                 cursor.getInt(DatabaseOrder.ID.ordinal()),
                 cursor.getString(DatabaseOrder.FIRST_NAME.ordinal()),
                 cursor.getString(DatabaseOrder.LAST_NAME.ordinal()),
                 cursor.getString(DatabaseOrder.EMAIL.ordinal()),
-                cursor.getString(DatabaseOrder.PASSWORD.ordinal()),
                 cursor.getInt(DatabaseOrder.MAX_HOURS.ordinal()),
                 cursor.getString(DatabaseOrder.WORKSTATION.ordinal()),
                 cursor.getString(DatabaseOrder.QUALIFICATION.ordinal()),

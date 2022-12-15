@@ -64,7 +64,7 @@ public class listEmployes extends AppCompatActivity {
                 = new ArrayAdapter<String>(
                 this,
                 R.layout.support_simple_spinner_dropdown_item,
-                LISTEMPLOYE);
+                usersList);
         l.setAdapter(arr);
 
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {

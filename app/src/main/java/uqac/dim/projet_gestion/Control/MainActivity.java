@@ -15,6 +15,7 @@ import android.view.View;
 
 import uqac.dim.projet_gestion.Model.task.FetchUserListTask;
 import uqac.dim.projet_gestion.R;
+import uqac.dim.projet_gestion.database.GestionDatabaseConnectionFactory;
 import uqac.dim.projet_gestion.database.repository.GestionRepository;
 
 import java.util.ArrayList;
@@ -25,8 +26,9 @@ public class MainActivity extends AppCompatActivity
 
     ArrayList<String> usersListInString = new ArrayList<String>();
 
+    GestionDatabaseConnectionFactory gestionDatabaseConnectionFactory;
     private GestionRepository gestionRepository;
-    private ProgressBar navigationViewProgressBar;
+
     Project project1;
     User user1;
     Task task1;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        GestionDatabaseConnectionFactory gestionDatabaseConnectionFactory = new GestionDatabaseConnectionFactory(this);
+        gestionRepository  = new GestionRepository(gestionDatabaseConnectionFactory.getWritableDatabase() );
 
         Button employe = (Button) findViewById(R.id.addEmploye);
         employe.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity
                 list_projects(view);
             }
         });
+
+
     }
 
     @Override
@@ -218,22 +225,18 @@ public class MainActivity extends AppCompatActivity
         return gestionRepository;
     }
 
-    private void showFullscreenProgressBar() {
-        navigationViewProgressBar.setVisibility(View.VISIBLE);
-    }
+   // private void showFullscreenProgressBar() {navigationViewProgressBar.setVisibility(View.VISIBLE);}
 
-    private void hideFullscreenProgressBar() {
-        navigationViewProgressBar.setVisibility(View.INVISIBLE);
-    }
+  //  private void hideFullscreenProgressBar() {navigationViewProgressBar.setVisibility(View.INVISIBLE);}
 
     @Override
     public void onUserListFetching() {
-        showFullscreenProgressBar();
+        //showFullscreenProgressBar();
     }
 
     @Override
     public void onUserListFetched(List users) {
-        hideFullscreenProgressBar();
+       // hideFullscreenProgressBar();
 
         for ( Object user: users
              ) {
@@ -245,6 +248,7 @@ public class MainActivity extends AppCompatActivity
     protected void list_employes(View view)
     {
         Intent list_employes = new Intent(MainActivity.this,listEmployes.class);
+        makeFetchUserListDbRequest(FetchUserListTask.USER_BY_ID);
         list_employes.putExtra("UserList", usersListInString);
         startActivity(list_employes);
         //vas dans la bd
